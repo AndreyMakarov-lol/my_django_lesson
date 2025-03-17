@@ -22,12 +22,15 @@ from rest_framework.routers import SimpleRouter
 
 from orders.views import OrderViews
 
+from orders.views import orders_app
+
 router = SimpleRouter()
 
 router.register('api/orders', OrderViews)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', order_page)
+    path('', order_page),
+    path('orders_page/', orders_app)
 ]
 urlpatterns += router.urls
