@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'my_first_app',
     'orders',
     'products',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
