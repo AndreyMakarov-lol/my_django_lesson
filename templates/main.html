@@ -11,7 +11,30 @@
 <body>
 {% verbatim %}
   <div class="container" id="orders_app">
+       <h1>Orders</h1>
 
+        <!-- Индикатор загрузки -->
+        <div v-if="loading">Загрузка данных...</div>
+
+        <!-- Таблица с данными -->
+        <table v-if="!loading" border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>User</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="order in orders" :key="order.id">
+
+                    <td>{{ order.amount }}</td>
+                    <td>{{ order.description }}</td>
+                    <td>{{ order.user ? order.user.username : 'N/A' }}</td>
+                </tr>
+            </tbody>
+        </table>
 
 
   </div>
